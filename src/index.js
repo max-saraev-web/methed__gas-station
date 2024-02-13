@@ -1,3 +1,5 @@
+import {PassangerCar, Truck} from './scripts/modules/car';
+import {Station} from './scripts/modules/station';
 import './style.css';
 
 const open = document.querySelector('.open');
@@ -25,21 +27,38 @@ const testArray = {
   ],
 };
 
+
+const station = new Station([
+  {
+    type: 'petrol',
+    count: 2,
+    speed: 5,
+  },
+  {
+    type: 'diesel',
+    count: 1,
+    speed: 10,
+  },
+]);
+
 const getTestCar = () => {
   const typeBool = Math.random() < 0.6;
   const listCar = typeBool ? testArray.passangerCar : testArray.truck;
   const randomCar = listCar[(Math.floor(Math.random() * listCar.length))];
-  return randomCar;
+  return typeBool ? new PassangerCar(...randomCar) : new Truck(...randomCar);
 };
 
 
 open.addEventListener('click', () => {
   console.log('Открыто');
+  station.init();
   open.remove();
+  console.log(station);
   car.style.display = 'block';
   car.addEventListener('click', () => {
     console.log(getTestCar());
   });
 });
 
+// console.log(getTestCar());
 
