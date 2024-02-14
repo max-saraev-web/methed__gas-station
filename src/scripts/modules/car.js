@@ -5,7 +5,7 @@ export class Car {
     this.maxTank = maxTank;
     this.nowTank = Math.floor(Math.random() * maxTank);
   }
-  needPetrol() {
+  get needPetrol() {
     return this.maxTank - this.nowTank;
   }
   fillUp() {

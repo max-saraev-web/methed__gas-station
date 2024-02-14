@@ -39,7 +39,7 @@ const station = new Station([
     count: 1,
     speed: 10,
   },
-]);
+], '.app');
 
 const getTestCar = () => {
   const typeBool = Math.random() < 0.6;
