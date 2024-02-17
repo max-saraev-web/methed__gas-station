@@ -28,6 +28,13 @@ const testArray = {
 };
 
 
+const getTestCar = () => {
+  const typeBool = Math.random() < 0.6;
+  const listCar = typeBool ? testArray.passangerCar : testArray.truck;
+  const randomCar = listCar[(Math.floor(Math.random() * listCar.length))];
+  return typeBool ? new PassangerCar(...randomCar) : new Truck(...randomCar);
+};
+
 const station = new Station([
   {
     type: 'petrol',
@@ -41,21 +48,14 @@ const station = new Station([
   },
 ], '.app');
 
-const getTestCar = () => {
-  const typeBool = Math.random() < 0.6;
-  const listCar = typeBool ? testArray.passangerCar : testArray.truck;
-  const randomCar = listCar[(Math.floor(Math.random() * listCar.length))];
-  return typeBool ? new PassangerCar(...randomCar) : new Truck(...randomCar);
-};
-
-
 open.addEventListener('click', () => {
-  console.log('Открыто');
   station.init();
-  open.remove();
   console.log(station);
+  console.log('открыто!');
+  open.remove();
   car.style.display = 'block';
   car.addEventListener('click', () => {
+    station.addCarQueue(getTestCar());
     console.log(getTestCar());
   });
 });

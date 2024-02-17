@@ -5,6 +5,7 @@ export class RenderStation {
     this.init();
   }
   init() {
+    console.log(this.station);
     this.wrapper = document.createElement('div');
     this.wrapper.style.cssText = `
       display: grid;
@@ -15,18 +16,11 @@ export class RenderStation {
     `;
     this.renderStation();
   }
-  renderStation() {
-    this.wrapper.textContent = '';
-    const queueList = this.createQueue();
-    const columns = this.createColumns();
-    this.wrapper.append(queueList, columns);
-    document.querySelector(this.app.append(this.wrapper));
-  }
   createQueue() {
     const list = document.createElement('ul');
     this.station.queue.forEach(car => {
       const item = document.createElement('li');
-      item.textContent = `${car.getTitle()}`;
+      item.textContent = `${car.getTitle}`;
       item.classList.add(car.typeCar);
       list.append(item);
     });
@@ -35,19 +29,26 @@ export class RenderStation {
   createColumns() {
     const columns = document.createElement('ul');
     columns.classList.add('columns');
-
-    this.station.flling.forEach(column => {
+    this.station.filling.forEach(column => {
       const itemColumn = document.createElement('li');
       itemColumn.classList.add(column.type);
 
       if (column.car) {
         const itemCar = document.createElement('p');
         const car = column.car;
-        itemCar.textContent = car.getTitle();
+        itemCar.textContent = car.getTitle;
         itemCar.classList.add(car.typeCar);
+        itemColumn.append(itemCar);
       }
       columns.append(itemColumn);
     });
     return columns;
+  }
+  renderStation() {
+    this.wrapper.textContent = '';
+    const queueList = this.createQueue();
+    const columns = this.createColumns();
+    this.wrapper.append(queueList, columns);
+    document.querySelector(this.app).append(this.wrapper);
   }
 }

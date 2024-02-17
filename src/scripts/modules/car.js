@@ -11,6 +11,9 @@ export class Car {
   fillUp() {
     this.nowTank = this.maxTank;
   }
+  get getTitle() {
+    return `${this.brand + this.model}`;
+  }
 }
 
 export class PassangerCar extends Car {
