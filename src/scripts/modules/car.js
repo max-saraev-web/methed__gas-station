@@ -24,6 +24,14 @@ export class PassangerCar extends Car {
   }
 }
 
+export class PassangerCarGaz extends PassangerCar {
+  typeCar = 'gaz-car';
+  constructor(brand, model, maxTank, typeFuel = 'gaz') {
+    super(brand, model, maxTank);
+    this.typeFuel = typeFuel;
+  }
+}
+
 export class Truck extends Car {
   typeCar = 'truck';
   constructor(brand, model, maxTank, typeFuel = 'diesel') {

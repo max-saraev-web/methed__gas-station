@@ -35,6 +35,15 @@ ul {
   list-style-image: url(assets/img/icon-park-outline_petrol.svg);
 }
 
+
+.gaz {
+  /* НЕ получается поставить маркеру размеры */
+  /* list-style-image: url(assets/img/gas-station.svg);  */
+  list-style-image: url(assets/img/icon-park-outline_petrol.svg);
+}
+
+
+
 .passanger {
   padding-left: 20px;
   background-image: url(assets/img/clarity_car-solid.svg);
@@ -47,6 +56,14 @@ ul {
   background-image: url(assets/img/bxs_truck.svg);
   background-repeat: no-repeat;
   background-size: 20px;
+}
+
+.gaz-car {
+  padding-left: 20px;
+  background-image: url(assets/img/gas-station.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  object-fit: contain;
 }
 
 .form-input {
