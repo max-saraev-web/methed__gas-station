@@ -37,9 +37,7 @@ ul {
 
 
 .gaz {
-  /* НЕ получается поставить маркеру размеры */
-  /* list-style-image: url(assets/img/gas-station.svg);  */
-  list-style-image: url(assets/img/icon-park-outline_petrol.svg);
+  list-style-image: url(assets/img/gas-station.svg); 
 }
 
 
