@@ -132,3 +132,11 @@ h1 {
 .car {
   display: none;
 }
+.column__title{
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.column__title::first-letter{
+  color: red;
+  text-transform: uppercase;
+}

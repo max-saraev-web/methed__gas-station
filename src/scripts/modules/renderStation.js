@@ -33,6 +33,11 @@ export class RenderStation {
       const itemColumn = document.createElement('li');
       itemColumn.classList.add(column.type);
 
+      const columnName = document.createElement('p');
+      columnName.classList.add('column__title')
+      columnName.textContent = column.type;
+      itemColumn.append(columnName);
+
       if (column.car) {
         const itemCar = document.createElement('p');
         const car = column.car;
