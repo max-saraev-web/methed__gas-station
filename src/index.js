@@ -38,7 +38,7 @@ const getTestCar = () => {
 const station = new Station([
   {
     type: 'petrol',
-    count: 2,
+    count: 3,
     speed: 5,
   },
   {
@@ -55,8 +55,8 @@ open.addEventListener('click', () => {
   open.remove();
   car.style.display = 'block';
   car.addEventListener('click', () => {
-    station.addCarQueue(getTestCar());
-    console.log(getTestCar());
+    const testCar = getTestCar();
+    station.addCarQueue(testCar);
   });
 });
 

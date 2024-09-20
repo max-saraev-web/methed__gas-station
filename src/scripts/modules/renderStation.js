@@ -5,7 +5,7 @@ export class RenderStation {
     this.init();
   }
   init() {
-    console.log(this.station);
+    // console.log(this.station);
     this.wrapper = document.createElement('div');
     this.wrapper.style.cssText = `
       display: grid;

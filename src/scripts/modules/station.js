@@ -49,31 +49,33 @@ export class Station {
   }
 
   fillingGo(column) {
-    console.log(`Заправляем ${JSON.stringify(column.car)}`);
     const car = column.car;
     const needPetrol = car.needPetrol;
     let nowTank = car.nowTank;
     const timerId = setInterval(() => {
       console.log(car.getTitle, nowTank);
       nowTank += column.speed;
-      if (nowTank >= car.maxTank) {
-        car.fillUp();
+      if (nowTank >= car.getMaxTank) {
         clearInterval(timerId);
         const total = car.nowTank - needPetrol;
+        car.fillUp();
         column.car = null;
+        console.log('total: ', total);
         this.leaveClient({car, total});
       }
     }, 1000);
   }
   leaveClient({car, total}) {
     this.#ready.push(car);
+    // console.log('car123: ', car);
+    // console.log(this.#ready);
+    console.log(`Заправка законченна ${car.getTitle} ${total}`);
+    console.log(this);
     this.renderStation.renderStation();
-    console.log(car.getTitle, total);
   }
   addCarQueue(car) {
-    console.log('машина добавлена ');
+    console.log('машина добавлена!', car);
     this.#queue.push(car);
-    console.log(this.#queue);
     this.renderStation.renderStation();
   }
 }

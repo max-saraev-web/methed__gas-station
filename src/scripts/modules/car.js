@@ -1,18 +1,23 @@
 export class Car {
+  #maxTank;
   constructor(brand, model, maxTank) {
     this.brand = brand;
     this.model = model;
-    this.maxTank = maxTank;
+    this.#maxTank = maxTank;
     this.nowTank = Math.floor(Math.random() * maxTank);
   }
   get needPetrol() {
-    return this.maxTank - this.nowTank;
+    return this.#maxTank - this.nowTank;
   }
   fillUp() {
-    this.nowTank = this.maxTank;
+    this.nowTank = this.#maxTank;
+    return this;
   }
   get getTitle() {
-    return `${this.brand + this.model}`;
+    return `${this.brand + ' ' + this.model}`;
+  }
+  get getMaxTank() {
+    return this.#maxTank;
   }
 }
 
