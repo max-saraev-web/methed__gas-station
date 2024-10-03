@@ -35,11 +35,21 @@ const getTestCar = () => {
   return typeBool ? new PassangerCar(...randomCar) : new Truck(...randomCar);
 };
 
+// const station = new Station([
+//   {
+//     type: 'petrol',
+//     count: 3,
+//     speed: 5,
+//   },
+//   {
+//     type: 'diesel',
+//     count: 1,
+//     speed: 10,
+//   },
+// ], '.app');
 const station = new Station([
   {
     type: 'petrol',
-    count: 3,
-    speed: 5,
   },
   {
     type: 'diesel',

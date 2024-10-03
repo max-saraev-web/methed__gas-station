@@ -13,6 +13,7 @@ export class Station {
 
   init() {
     for (const optionStation of this.typeStation) {
+      if (!optionStation.count) optionStation.count = 1;
       for (let i = 0; i < optionStation.count; i++) {
         this.#filling.push(new Column(optionStation.type, optionStation.speed));
       }

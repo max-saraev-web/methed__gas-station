@@ -1,6 +1,6 @@
 export class Column {
   #car = null;
-  constructor(type, speed) {
+  constructor(type, speed = 5) {
     this.type = type;
     this.speed = speed;
   }
