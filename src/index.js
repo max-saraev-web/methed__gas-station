@@ -30,9 +30,17 @@ const testArray = {
 
 const getTestCar = () => {
   const typeBool = Math.random() < 0.6;
-  const listCar = typeBool ? testArray.passangerCar : testArray.truck;
+  if (typeBool) {
+    const typeBool = Math.random() < 0.6;
+    const listCar = typeBool ? testArray.passangerCar :
+      testArray.passangerCarGaz;
+    const randomCar = listCar[(Math.floor(Math.random() * listCar.length))];
+    return typeBool ? new PassangerCar(...randomCar) :
+        new PassangerCarGaz(...randomCar);
+  }
+  const listCar = testArray.truck;
   const randomCar = listCar[(Math.floor(Math.random() * listCar.length))];
-  return typeBool ? new PassangerCar(...randomCar) : new Truck(...randomCar);
+  return new Truck(...randomCar);
 };
 
 // const station = new Station([
@@ -55,6 +63,9 @@ const station = new Station([
     type: 'diesel',
     count: 1,
     speed: 10,
+  },
+  {
+    type: 'gaz',
   },
 ], '.app');
 

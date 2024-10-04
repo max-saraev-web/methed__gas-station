@@ -30,6 +30,19 @@ ul {
   list-style-type: '👉';
   padding-inline-start: 1ch;
 }
+.gaz {
+  list-style-image: url(assets/img/gas-station.svg); 
+  background-size: 20px;
+  object-fit: contain;
+
+}
+.gaz-car {
+  padding-left: 20px;
+  background-image: url(assets/img/gas-station.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  object-fit: contain;
+}
 
 .diesel {
   list-style-image: url(assets/img/icon-park-outline_petrol.svg);
