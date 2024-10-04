@@ -38,7 +38,7 @@ ul {
 }
 .gaz-car {
   padding-left: 20px;
-  background-image: url(assets/img/gas-station.svg);
+  background-image: url(assets/img/propane-car.svg);
   background-repeat: no-repeat;
   background-size: 20px;
   object-fit: contain;

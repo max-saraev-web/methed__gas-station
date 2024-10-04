@@ -1,4 +1,4 @@
-import {PassangerCar, Truck} from './scripts/modules/car';
+import {PassangerCar, PassangerCarGaz, Truck} from './scripts/modules/car';
 import {Station} from './scripts/modules/station';
 import './style.css';
 
@@ -6,6 +6,11 @@ const open = document.querySelector('.open');
 const car = document.querySelector('.car');
 
 const testArray = {
+  passangerCarGaz: [
+    ['Lada', 'Vesta CNG', 90],
+    ['Lada', 'Largus CNG', 90],
+    ['VW ', 'Passat 1.4 TSI Ecofuel', 30],
+  ],
   passangerCar: [
     ['Opel', 'Crossland', 45],
     ['Opel', 'Grandland X', 53],
